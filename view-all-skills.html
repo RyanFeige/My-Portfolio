@@ -183,11 +183,19 @@
             }
             downBtn.addEventListener('click', function() {
                 var idx = findIndex();
-                sections[Math.min(idx + 1, sections.length - 1)].scrollIntoView({ behavior: 'smooth' });
+                if (idx >= sections.length - 1) {
+                    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+                } else {
+                    sections[idx + 1].scrollIntoView({ behavior: 'smooth' });
+                }
             });
             upBtn.addEventListener('click', function() {
                 var idx = findIndex();
-                sections[Math.max(idx - 1, 0)].scrollIntoView({ behavior: 'smooth' });
+                if (idx <= 0) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    sections[Math.max(idx - 1, 0)].scrollIntoView({ behavior: 'smooth' });
+                }
             });
             var ticking = false;
             window.addEventListener('scroll', function() {
@@ -197,6 +205,11 @@
                 }
             });
             update();
+            var grid = document.getElementById('skills-grid-full');
+            if (grid) {
+                var mo = new MutationObserver(function() { update(); });
+                mo.observe(grid, { childList: true, subtree: true });
+            }
         });
     </script>
 </body>

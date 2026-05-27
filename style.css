@@ -298,9 +298,9 @@ textarea {
 }
 
 [data-theme="light"] .theme-toggle:hover {
-    border-color: var(--lotus-gold);
-    color: var(--lotus-gold);
-    background: rgba(245, 201, 126, 0.08);
+    border-color: var(--lotus-pink);
+    color: var(--lotus-pink);
+    background: rgba(240, 161, 199, 0.08);
 }
 
 /* ===== HERO SECTION ===== */
@@ -1247,7 +1247,7 @@ textarea {
 #contact > .container {
     justify-content: flex-start;
     gap: 32px;
-    padding-bottom: 40px;
+    padding: 40px 24px;
 }
 
 .contact-grid {
