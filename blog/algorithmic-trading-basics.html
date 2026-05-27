@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Algorithmic Trading | Ryan Feige</title>
+    <meta name="description" content="A beginner-friendly guide to getting started with algorithmic trading.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .blog-post-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .blog-post-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .blog-post-header .section-tag {
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .blog-post-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        .blog-post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .blog-post-content {
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .blog-post-content p {
+            margin-bottom: 20px;
+        }
+        .blog-post-content h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 36px 0 16px;
+            color: var(--text-primary);
+        }
+        .blog-post-content h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 28px 0 12px;
+            color: var(--text-primary);
+        }
+        .blog-post-content code {
+            background: rgba(196, 113, 237, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--accent-pink);
+        }
+        .blog-post-content pre {
+            background: rgba(10, 10, 20, 0.6);
+            border: 1px solid rgba(196, 113, 237, 0.15);
+            border-radius: 12px;
+            padding: 20px 24px;
+            overflow-x: auto;
+            margin-bottom: 24px;
+        }
+        .blog-post-content pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-primary);
+        }
+        .blog-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+            transition: color 0.3s ease;
+        }
+        .blog-back:hover {
+            color: var(--accent-pink);
+        }
+        [data-theme="light"] .blog-post-content pre {
+            background: rgba(0, 0, 0, 0.04);
+            border-color: rgba(139, 92, 246, 0.15);
+        }
+    </style>
+</head>
+
+<body class="view-all-page">
+    <canvas id="lotus-canvas"></canvas>
+
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <svg class="lotus-icon" viewBox="0 0 60 50" width="36" height="30">
+                    <defs>
+                        <linearGradient id="lotus-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f0a1c7" />
+                            <stop offset="100%" style="stop-color:#c471ed" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M30 5 Q30 20 20 35 Q15 42 10 45 Q20 40 30 42 Q40 40 50 45 Q45 42 40 35 Q30 20 30 5Z" fill="url(#lotus-grad)" opacity="0.9" />
+                    <path d="M30 10 Q25 22 15 33 Q10 38 5 40 Q15 36 30 38 Q45 36 55 40 Q50 38 45 33 Q35 22 30 10Z" fill="url(#lotus-grad)" opacity="0.6" />
+                </svg>
+                <span>Ryan Feige</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#skills" class="nav-link">Skills</a>
+                <a href="../index.html#expertise" class="nav-link">Expertise</a>
+                <a href="../index.html#projects" class="nav-link">Projects</a>
+                <a href="../index.html#blog" class="nav-link">Blog</a>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                    </svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                </button>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article class="view-all-section" style="padding-top:140px">
+        <div class="blog-post-container">
+            <a href="../view-all-blogs.html" class="blog-back">← Back to all posts</a>
+            <div class="blog-post-header">
+                <span class="section-tag">// Trading</span>
+                <h1>Getting Started with Algorithmic Trading</h1>
+                <div class="blog-post-meta">
+                    <span>May 1, 2026</span>
+                    <span>·</span>
+                    <span>6 min read</span>
+                </div>
+            </div>
+            <div class="blog-post-content">
+                <p>Algorithmic trading sounds like something reserved for Wall Street quant firms with billion-dollar budgets. The truth is, with modern tools and APIs, anyone with programming skills can start building and testing trading algorithms from their laptop.</p>
+
+                <h2>What Is Algorithmic Trading?</h2>
+                <p>At its core, algorithmic trading is simply using computer programs to execute trades based on predefined rules. These rules can be as simple as "buy when the 50-day moving average crosses above the 200-day moving average" or as complex as machine learning models analyzing sentiment from thousands of news articles.</p>
+                <p>The key advantage is removing emotion from trading decisions. Computers don't panic during a dip or get greedy during a rally — they follow the strategy exactly as programmed.</p>
+
+                <h2>What You Need to Get Started</h2>
+                <p>You don't need a finance degree. Here's the essential toolkit:</p>
+                <ul>
+                    <li><strong>A programming language</strong> — Python is the most popular choice for algo trading</li>
+                    <li><strong>A brokerage with API access</strong> — Alpaca, Interactive Brokers, and TD Ameritrade all offer APIs</li>
+                    <li><strong>Market data</strong> — Yahoo Finance (via <code>yfinance</code>) is free for basic use</li>
+                    <li><strong>A backtesting engine</strong> — Backtrader, Zipline, or custom scripts</li>
+                </ul>
+
+                <h2>Start with Backtesting</h2>
+                <p>Before you risk a single dollar, backtest your strategy against historical data. This is where the real learning happens. You'll discover how your strategy would have performed in different market conditions — bull runs, crashes, sideways markets.</p>
+                <p>A simple moving average crossover strategy in Python might look like this:</p>
+                <pre><code>import pandas as pd\nimport yfinance as yf\n\ndata = yf.download('AAPL', start='2020-01-01')\ndata['SMA50'] = data['Close'].rolling(50).mean()\ndata['SMA200'] = data['Close'].rolling(200).mean()\ndata['Signal'] = 0\ndata.loc[data['SMA50'] > data['SMA200'], 'Signal'] = 1</code></pre>
+
+                <h2>Risk Management Is Everything</h2>
+                <p>The best algorithm in the world will fail without proper risk management. Always consider position sizing, stop-losses, and maximum drawdown limits. Never risk more than you're willing to lose on any single trade or strategy.</p>
+
+                <h2>Start Small</h2>
+                <p>My advice: paper trade (simulate) for at least three months. Track every trade. Analyze what works and what doesn't. Only then consider deploying real capital — and start with an amount you'd be comfortable losing entirely.</p>
+
+                <p>Algorithmic trading is a journey, not a destination. The markets evolve, and your strategies need to evolve with them. Enjoy the process of learning and building.</p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer" style="margin-top:0">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg class="lotus-icon" viewBox="0 0 60 50" width="28" height="24">
+                        <path d="M30 5 Q30 20 20 35 Q15 42 10 45 Q20 40 30 42 Q40 40 50 45 Q45 42 40 35 Q30 20 30 5Z" fill="url(#lotus-grad)" opacity="0.9" />
+                    </svg>
+                    <span>Ryan Feige</span>
+                </div>
+                <p class="footer-text">Crafted with passion & precision © 2026</p>
+                <p class="footer-quote">"From muddy waters, the lotus blooms."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../view-all-blogs.js"></script>
+</body>
+</html>

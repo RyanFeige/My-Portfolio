@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "How I Built This Portfolio",
+        "slug": "building-this-portfolio",
+        "date": "2026-05-20",
+        "category": "Web Dev",
+        "excerpt": "A deep dive into the design and development of my lotus-themed portfolio — from particle animations to glassmorphism cards.",
+        "featured": true
+    },
+    {
+        "id": 2,
+        "title": "My Trading Journey: Lessons from the Markets",
+        "slug": "trading-journey-lessons",
+        "date": "2026-05-15",
+        "category": "Trading",
+        "excerpt": "Reflections on my path from retail trading to building algorithmic strategies — what worked, what didn't, and what I learned.",
+        "featured": true
+    },
+    {
+        "id": 3,
+        "title": "Why I Love Python for Automation",
+        "slug": "python-automation",
+        "date": "2026-05-10",
+        "category": "Coding",
+        "excerpt": "From web scraping to trading bots — Python has been my go-to for automation. Here's why it should be yours too."
+    },
+    {
+        "id": 4,
+        "title": "Getting Started with Algorithmic Trading",
+        "slug": "algorithmic-trading-basics",
+        "date": "2026-05-01",
+        "category": "Trading",
+        "excerpt": "A beginner-friendly guide to algorithmic trading concepts, backtesting frameworks, and risk management fundamentals."
+    },
+    {
+        "id": 5,
+        "title": "Designing with Dark Mode in Mind",
+        "slug": "dark-mode-design",
+        "date": "2026-04-20",
+        "category": "Design",
+        "excerpt": "Tips and tricks for creating beautiful dark mode interfaces that are easy on the eyes and look great."
+    }
+]

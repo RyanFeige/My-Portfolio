@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="All projects by Ryan Feige — Developer & Trader.">
+    <meta name="author" content="Ryan Feige">
+    <title>All Projects | Ryan Feige</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="view-all-page">
+    <canvas id="lotus-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg class="lotus-icon" viewBox="0 0 60 50" width="36" height="30">
+                    <defs>
+                        <linearGradient id="lotus-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f0a1c7" />
+                            <stop offset="100%" style="stop-color:#c471ed" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M30 5 Q30 20 20 35 Q15 42 10 45 Q20 40 30 42 Q40 40 50 45 Q45 42 40 35 Q30 20 30 5Z"
+                        fill="url(#lotus-grad)" opacity="0.9" />
+                    <path d="M30 10 Q25 22 15 33 Q10 38 5 40 Q15 36 30 38 Q45 36 55 40 Q50 38 45 33 Q35 22 30 10Z"
+                        fill="url(#lotus-grad)" opacity="0.6" />
+                </svg>
+                <span>Ryan Feige</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html#about" class="nav-link" data-section="about">About</a>
+                <a href="index.html#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="index.html#expertise" class="nav-link" data-section="expertise">Expertise</a>
+                <a href="index.html#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="index.html#contact" class="nav-link" data-section="contact">Contact</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                    </svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                </button>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="view-all-hero">
+        <div class="container">
+            <div class="view-all-hero-content">
+                <a href="index.html#projects" class="view-all-breadcrumb">← Back to Projects</a>
+                <h1 class="view-all-title">All <span class="gradient-text">Projects</span></h1>
+                <p class="view-all-subtitle">A complete collection of my portfolio work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Projects -->
+    <section class="view-all-section" id="projects-all">
+        <div class="container">
+            <div class="projects-grid-full" id="projects-grid-full">
+                <div class="carousel-loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading projects from GitHub...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg class="lotus-icon" viewBox="0 0 60 50" width="28" height="24">
+                        <path d="M30 5 Q30 20 20 35 Q15 42 10 45 Q20 40 30 42 Q40 40 50 45 Q45 42 40 35 Q30 20 30 5Z"
+                            fill="url(#lotus-grad)" opacity="0.9" />
+                    </svg>
+                    <span>Ryan Feige</span>
+                </div>
+                <p class="footer-text">Crafted with passion & precision © 2026</p>
+                <p class="footer-quote">"From muddy waters, the lotus blooms."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="view-all-projects.js"></script>
+
+    <!-- Scroll Navigation Buttons -->
+    <div class="scroll-nav-group">
+        <button id="scroll-up-btn" class="scroll-nav-btn" aria-label="Scroll up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        </button>
+        <button id="scroll-down-btn" class="scroll-nav-btn" aria-label="Scroll down">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var upBtn = document.getElementById('scroll-up-btn');
+            var downBtn = document.getElementById('scroll-down-btn');
+            if (!upBtn || !downBtn) return;
+            var sections = Array.from(document.querySelectorAll('section[id]'));
+            function findIndex() {
+                var mid = window.scrollY + window.innerHeight / 3;
+                for (var i = sections.length - 1; i >= 0; i--) {
+                    if (sections[i].offsetTop <= mid + 50) return i;
+                }
+                return 0;
+            }
+            function update() {
+                var atTop = window.scrollY < 100;
+                var atBottom = document.documentElement.scrollHeight - window.scrollY - window.innerHeight < 30;
+                upBtn.classList.toggle('visible', !atTop);
+                downBtn.classList.toggle('visible', !atBottom);
+            }
+            downBtn.addEventListener('click', function() {
+                var idx = findIndex();
+                sections[Math.min(idx + 1, sections.length - 1)].scrollIntoView({ behavior: 'smooth' });
+            });
+            upBtn.addEventListener('click', function() {
+                var idx = findIndex();
+                sections[Math.max(idx - 1, 0)].scrollIntoView({ behavior: 'smooth' });
+            });
+            var ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(function() { update(); ticking = false; });
+                    ticking = true;
+                }
+            });
+            update();
+        });
+    </script>
+</body>
+
+</html>

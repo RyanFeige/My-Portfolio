@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="All skills and projects by Ryan Feige — Developer & Trader.">
+    <meta name="author" content="Ryan Feige">
+    <title>All Skills & Projects | Ryan Feige</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="view-all-page">
+    <!-- Animated Background -->
+    <canvas id="lotus-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg class="lotus-icon" viewBox="0 0 60 50" width="36" height="30">
+                    <defs>
+                        <linearGradient id="lotus-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f0a1c7" />
+                            <stop offset="100%" style="stop-color:#c471ed" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M30 5 Q30 20 20 35 Q15 42 10 45 Q20 40 30 42 Q40 40 50 45 Q45 42 40 35 Q30 20 30 5Z"
+                        fill="url(#lotus-grad)" opacity="0.9" />
+                    <path d="M30 10 Q25 22 15 33 Q10 38 5 40 Q15 36 30 38 Q45 36 55 40 Q50 38 45 33 Q35 22 30 10Z"
+                        fill="url(#lotus-grad)" opacity="0.6" />
+                </svg>
+                <span>Ryan Feige</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html#about" class="nav-link" data-section="about">About</a>
+                <a href="index.html#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="index.html#expertise" class="nav-link" data-section="expertise">Expertise</a>
+                <a href="index.html#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="index.html#contact" class="nav-link" data-section="contact">Contact</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                    </svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                </button>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="view-all-hero">
+        <div class="container">
+            <div class="view-all-hero-content">
+                <a href="index.html" class="view-all-breadcrumb">← Back to Home</a>
+                <h1 class="view-all-title">All <span class="gradient-text">Skills & Projects</span></h1>
+                <p class="view-all-subtitle">A complete overview of my technical abilities and portfolio work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Skills -->
+    <section class="view-all-section" id="skills-all">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Tech Stack</span>
+                <h2 class="section-title">All <span class="gradient-text">Skills</span></h2>
+            </div>
+            <div class="skills-grid-full" id="skills-grid-full">
+                <div class="skill-card glass-card">
+                    <div class="skill-icon python-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M12 2C6.48 2 6 4.02 6 5.5V8h6v1H4.5C2.57 9 1 10.74 1 13s1.57 4 3.5 4H6v-2.5C6 12.57 7.57 11 9.5 11H14.5C15.88 11 17 9.88 17 8.5V5.5C17 3.57 14.97 2 12 2zm-1.5 2a1 1 0 110 2 1 1 0 010-2z"/>
+                            <path d="M12 22c5.52 0 6-2.02 6-3.5V16h-6v-1h7.5c1.93 0 3.5-1.74 3.5-4s-1.57-4-3.5-4H18v2.5c0 1.93-1.57 3.5-3.5 3.5H9.5C8.12 13 7 14.12 7 15.5v3c0 1.93 2.03 3.5 5 3.5zm1.5-2a1 1 0 110-2 1 1 0 010 2z"/>
+                        </svg>
+                    </div>
+                    <h4>Python</h4>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="skill-icon js-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M3 3h18v18H3V3zm4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.79 2.53-2.55v-5.78h-1.7v5.74c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83zm5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8z"/>
+                        </svg>
+                    </div>
+                    <h4>JavaScript</h4>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="skill-icon java-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0 0-8.216 2.051-4.292 6.573"/>
+                            <path d="M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.886 9.578 1.554 17.462-.7 14.977-1.819M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.356.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.929 4.562 0 0 .07-.062.091-.118"/>
+                        </svg>
+                    </div>
+                    <h4>Java</h4>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="skill-icon cpp-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M20.66 7l-.87-.5L12.2 2.27a.51.51 0 00-.4 0l-8.46 4.88-.14.1A1 1 0 003 8v8a1 1 0 00.52.87l8.4 4.86a.93.93 0 00.56.1.56.56 0 00.34-.1L21 16.88a1 1 0 00.44-.78V8a1.22 1.22 0 00-.78-1zM12 15.5A3.5 3.5 0 1115.5 12a3.5 3.5 0 01-3.5 3.5zm4.5-2h-1v-1h-1v1h-1v1h1v1h1v-1h1zm4 0h-1v-1h-1v1h-1v1h1v1h1v-1h1z"/>
+                        </svg>
+                    </div>
+                    <h4>C / C++</h4>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="skill-icon html-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.076-.757.076-.771.076-.758H6.792l.608 6.747H14.7l-.261 2.903-2.439.657-2.439-.657-.163-1.823H7.623l.331 3.663L12 17.854l4.047-1.149.544-6.097H8.531v.142z"/>
+                        </svg>
+                    </div>
+                    <h4>HTML & CSS</h4>
+                </div>
+                <div class="skill-card glass-card">
+                    <div class="skill-icon sql-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M12 3C7.58 3 4 4.79 4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4zm0 2c3.87 0 6 1.5 6 2s-2.13 2-6 2-6-1.5-6-2 2.13-2 6-2zM6 9.26C7.53 10.08 9.63 10.5 12 10.5s4.47-.42 6-1.24V12c0 .5-2.13 2-6 2s-6-1.5-6-2V9.26zm0 5C7.53 15.08 9.63 15.5 12 15.5s4.47-.42 6-1.24V17c0 .5-2.13 2-6 2s-6-1.5-6-2v-2.74z"/>
+                        </svg>
+                    </div>
+                    <h4>SQL</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Projects -->
+    <section class="view-all-section" id="projects-all">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Portfolio</span>
+                <h2 class="section-title">All <span class="gradient-text">Projects</span></h2>
+            </div>
+            <div class="projects-grid-full" id="projects-grid-full">
+                <div class="carousel-loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading projects from GitHub...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg class="lotus-icon" viewBox="0 0 60 50" width="28" height="24">
+                        <path d="M30 5 Q30 20 20 35 Q15 42 10 45 Q20 40 30 42 Q40 40 50 45 Q45 42 40 35 Q30 20 30 5Z"
+                            fill="url(#lotus-grad)" opacity="0.9" />
+                    </svg>
+                    <span>Ryan Feige</span>
+                </div>
+                <p class="footer-text">Crafted with passion & precision © 2026</p>
+                <p class="footer-quote">"From muddy waters, the lotus blooms."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="view-all.js"></script>
+</body>
+
+</html>
